@@ -1,4 +1,7 @@
-Unsupervised machine learning on illicit financial flows in Africa
+Welcome to your Jupyter Book
 ============================
 
-These pages perform unsupervised learning on trade mis-invoicing data.
+This is a small sample book to give you a feel for how book content is
+structured.
+
+Check out the content pages bundled with this sample book to get started.
