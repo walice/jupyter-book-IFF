@@ -23,9 +23,25 @@ USER ${NB_USER}
 RUN \
     pip install jupyter_contrib_nbextensions && \
     jupyter contrib nbextension install --sys-prefix && \
+    \
+    jupyter nbextension enable toc2/main --sys-prefix && \
     jupyter nbextension enable export_embedded/main --sys-prefix
 
-RUN jupyter nbextensions_configurator enable --sys-prefix
+RUN \
+    jupyter nbextensions_configurator enable --sys-prefix && \
+    \
+    pip install --pre rise && \
+    jupyter nbextension install rise --py --sys-prefix && \
+    jupyter nbextension enable rise --py --sys-prefix && \
+    \
+    pip install nbzip && \
+    jupyter serverextension enable nbzip --py --sys-prefix && \
+    jupyter nbextension install nbzip --py --sys-prefix && \
+    jupyter nbextension enable nbzip --py --sys-prefix
+
+# Jupyter Lab extensions
+RUN jupyter labextension install @jupyterlab/toc --clean && \
+    jupyter labextension install nbdime-jupyterlab
 
 # Packages
 RUN pip install -U "jupyter-book>=0.7.0b" && \
