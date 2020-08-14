@@ -45,7 +45,8 @@ RUN jupyter labextension install @jupyterlab/toc --clean && \
 
 # Packages
 RUN pip install -U "jupyter-book>=0.7.0b" && \
-    pip install ghp-import altair joypy networkx wbdata imageio
+    pip install ghp-import altair joypy networkx imageio
+RUN pip install https://github.com/OliverSherouse/wbdata/archive/dev.zip
     
 # Geospatial extensions
 RUN conda install -c conda-forge cartopy
