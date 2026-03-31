@@ -20,7 +20,7 @@ RUN chown -R ${NB_UID} ${HOME}
 USER ${NB_USER}
 
 # Upgrade Jupyter install
-RUN pip install --upgrade jupyter jupyter-core jupyter-console pyzmq tornado traitlets
+RUN pip install --upgrade jupyter jupyter-core jupyter-console pyzmq tornado traitlets "typing-extensions>=4.6.0,<4.8.0"
 
 # Jupyter notebook extensions
 RUN \
